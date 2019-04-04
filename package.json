@@ -1,0 +1,25 @@
+{
+  "name": "cwl-ingestor",
+  "version": "1.0.0",
+  "description": "A test CloudWatch logs ingestor package",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf ./lib",
+    "start": "npm run build && node lib/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.419.0",
+    "moment": "^2.24.0",
+    "papaparse": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^11.11.1",
+    "@types/papaparse": "^4.5.9",
+    "tslint": "^5.13.1",
+    "typescript": "^3.3.3333"
+  }
+}

@@ -1,0 +1,12 @@
+{
+	"awsProfile": "AWS_PROFILE",
+	"graphQLAPIId": "GRAPHQL_API_ID",
+	"logGroupName": "/aws/appsync/apis/GRAPHQL_API_ID",
+	"requestIds": [
+		"a75b5287-9ee2-486d-8d81-b6e55540a252",
+		"4d96a00e-5fd1-4a98-9d33-0268ea7c5b6b",
+		"8a9c248c-b89f-4c74-a8fe-cde813c46cc2",
+		"c93daded-04c3-40d2-a982-e2a68ff2a6d0",
+		"e7df9d64-fdc0-4332-8b38-6091c32a9897"
+	]
+}

@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "allowJs": false,
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "outDir": "lib",
+        "lib": [
+            "es2015",
+            "es2016.array.include",
+            "esnext.asynciterable",
+            "dom"
+        ]
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "lib"
+    ]
+}
