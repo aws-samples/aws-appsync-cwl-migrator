@@ -1,6 +1,6 @@
 # AWS AppSync CWL Migrator
 
-This is a sample package that migrates a given set of requestIds from the AppSync customer logs in CloudWatch, from the current (unstructured) to the new (structured JSON) format. If you have any AppSync logs from your existing APIs in an unstructured format, and are looking to run some analytics on the GraphQL tracing logs, this script will help you convert the older logs into a structured format, so you can leverage log analytics services to analyze on your existing requests.
+This is a sample package that migrates a given set of requestIds from the AWS AppSync logs in Amazon CloudWatch, from the current (unstructured) to the new (structured JSON) format. If you have any AWS AppSync logs from your existing APIs in an unstructured format, and are looking to run some analytics on the GraphQL tracing logs, this script will help you convert the older logs into a structured format, so you can leverage log analytics services to analyze on your existing requests.
 
 You can use this as a starter project, and modify to work according to your needs and convenience.
 
