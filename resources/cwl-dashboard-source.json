@@ -8,7 +8,7 @@
 			"height": 3,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields requestId, latency | filter logType = \"RequestSummary\" | sort latency desc | limit 10",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Top 10 requests with maximum latency"
 			}
 		},
@@ -20,7 +20,7 @@
 			"height": 3,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields ispresent(graphQLAPIId) as isApi | stats count() as statusCount by statusCode | filter isApi and logType = \"RequestSummary\" | sort statusCount desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Number of unique HTTP status codes"
 			}
 		},
@@ -32,7 +32,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields ispresent(resolverArn) as isRes\n| filter isRes and logType = \"Tracing\"\n| stats min(duration), max(duration), avg(duration) as avg_dur by resolverArn\n| limit 10\n| sort avg_dur desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Min, Max, Avg latencies of resolvers"
 			}
 		},
@@ -44,7 +44,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields resolverArn, duration\n| filter logType = \"Tracing\"\n| sort duration desc\n| limit 10",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Top 10 resolvers with maximum latency"
 			}
 		},
@@ -56,7 +56,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields ispresent(resolverArn) as isRes\n| stats count() as invocationCount by resolverArn\n| filter isRes and logType = \"Tracing\"\n| limit 10\n| sort invocationCount desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Most frequently invoked resolvers"
 			}
 		},
@@ -68,7 +68,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields ispresent(resolverArn) as isRes\n| stats count() as invocationCount by resolverArn\n| filter isRes\n| filter logType = \"Tracing\"\n| limit 10\n| sort invocationCount asc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Least frequently invoked resolvers"
 			}
 		},
@@ -80,7 +80,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields ispresent(resolverArn) as isRes | stats count() as errorCount by resolverArn, logType | filter isRes and (logType = \"RequestMapping\" or logType = \"ResponseMapping\") and fieldInError | limit 10 | sort errorCount desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Resolvers with most errors in mapping templates"
 			}
 		},
@@ -92,7 +92,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | stats min(duration), max(duration), avg(duration) as avg_dur by concat(parentType, '/', fieldName) as fieldKey | filter logType = \"Tracing\" | limit 10 | sort avg_dur desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Field latency statistics"
 			}
 		},
@@ -104,7 +104,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields concat(parentType, '/', fieldName) as fieldKey, duration\n| filter logType = \"Tracing\"\n| sort duration desc\n| limit 10",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Top 10 Fields with maximum latency"
 			}
 		},
@@ -116,7 +116,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | stats count() as invocationCount by concat(parentType, '/', fieldName) as fieldKey\n| filter logType = \"Tracing\"\n| limit 10\n| sort invocationCount desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Most frequently invoked fields"
 			}
 		},
@@ -128,7 +128,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | stats count() as invocationCount by concat(parentType, '/', fieldName) as fieldKey\n| filter logType = \"Tracing\"\n| limit 10\n| sort invocationCount asc\n",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Least frequently invoked fields"
 			}
 		},
@@ -140,7 +140,7 @@
 			"height": 3,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | stats min(parsing.duration), max(parsing.duration), avg(parsing.duration) as avg_dur by graphQLAPIId\n| filter logType = \"ExecutionSummary\"\n| limit 10\n| sort avg_dur desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Min, Max, Avg GraphQL Parsing Time for API"
 			}
 		},
@@ -152,7 +152,7 @@
 			"height": 3,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | stats min(validation.duration), max(validation.duration), avg(validation.duration) as avg_dur by graphQLAPIId\n| filter logType = \"ExecutionSummary\"\n| limit 10\n| sort avg_dur desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Min, Max, Avg GraphQL Validation Time for API"
 			}
 		},
@@ -164,7 +164,7 @@
 			"height": 6,
 			"properties": {
 				"query": "SOURCE '/aws/appsync/apis/GRAPHQL_API_ID' | fields @timestamp, @message\n| filter requestId = \"c93daded-04c3-40d2-a982-e2a68ff2a6d0\"\n| filter logType = \"Tracing\"\n| sort @timestamp desc",
-				"region": "us-west-2",
+				"region": "APPSYNC_REGION",
 				"title": "Tracing information for a given requestId"
 			}
 		}
